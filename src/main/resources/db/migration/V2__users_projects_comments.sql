@@ -1,10 +1,9 @@
--- Таблица задач (tasks)
 CREATE TABLE tasks (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     description TEXT,
-    status VARCHAR(50),
-    priority VARCHAR(50),
+    status VARCHAR(16),
+    priority VARCHAR(16),
     deadline TIMESTAMP,
     created_at TIMESTAMP,
     updated_at TIMESTAMP,
@@ -12,18 +11,16 @@ CREATE TABLE tasks (
     project_id UUID
 );
 
--- Таблица проектов (projects)
 CREATE TABLE projects (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     description TEXT,
-    status VARCHAR(50),
+    status VARCHAR(16),
     owner_id UUID,
     created_at TIMESTAMP,
     updated_at TIMESTAMP
 );
 
--- Таблица комментариев (comments)
 CREATE TABLE comments (
     id SERIAL PRIMARY KEY,
     content TEXT NOT NULL,
